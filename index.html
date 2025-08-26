@@ -1,28 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Países</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <title>Información de Países del Mundo</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 </head>
 <body>
     <header>
-        <h2>Información países del mundo</h2>
+        <h1>Información de Países del Mundo</h1>
+        <div class="visitor-counter">
+            <span id="visitor-count">Visitante #0</span>
+        </div>
     </header>
+    
     <main>
-        <section>
-            <div id="countries-container">
-                <h3>Lista de países</h3>
-                <div id="countries-list">
-                    
+        <div class="country-selector">
+            <h2>Selecciona un País</h2>
+            <select id="country-select">
+                <option value="">Cargando países...</option>
+            </select>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            Cargando información del país...
+        </div>
+
+        <div id="error-message" class="error" style="display: none;">
+            Error al cargar la información. Por favor, inténtalo de nuevo.
+        </div>
+
+        <div id="country-info" class="country-info">
+            <div class="country-header">
+                <h2 id="country-name" class="country-name"></h2>
+                <img id="country-flag" class="flag" alt="Bandera del país">
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Información Económica</h3>
+                    <p><strong>Moneda:</strong> <span id="currency"></span></p>
+                    <p><strong>Símbolo:</strong> <span id="currency-symbol"></span></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Hora Actual</h3>
+                    <p id="current-time">Cargando...</p>
+                    <p><strong>Zona Horaria:</strong> <span id="timezone"></span></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Información General</h3>
+                    <p><strong>Capital:</strong> <span id="capital"></span></p>
+                    <p><strong>Región:</strong> <span id="region"></span></p>
+                    <p><strong>Población:</strong> <span id="population"></span></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Datos Adicionales</h3>
+                    <p><strong>Código:</strong> <span id="country-code"></span></p>
+                    <p><strong>Idiomas:</strong> <span id="languages"></span></p>
+                    <p><strong>Área:</strong> <span id="area"></span> km²</p>
                 </div>
             </div>
-            <script src="static/app.js"></script>
-        </section>
+
+            <div class="map-container">
+                <h3>Ubicación en el Mapa</h3>
+                <div id="map"></div>
+            </div>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; Todos los derechos reservados: </p>
+        <p>&copy; 2023 Todos los derechos reservados</p>
+        <div class="api-credits">
+            APIs utilizadas: REST Countries, WorldTimeAPI, OpenStreetMap
+        </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="/static/app.js"></script>
 </body>
 </html>
