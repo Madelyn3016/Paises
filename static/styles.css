@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    font-family: 'Ubuntu', 'Montagu Slab';
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-image: url(https://media.istockphoto.com/id/1442849073/es/foto/el-fondo-de-la-ilustraci%C3%B3n-3d-de-earth-space-planet-luces-de-la-ciudad-en-el-planeta.jpg?s=612x612&w=0&k=20&c=_4XkO9PXk12NxfhjOIt_toxIaqD-_3_yQou1Gb9jeqw=);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center;
+}
+
+#countries-container{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    padding: auto;
+    background-color: white;
+    margin: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#countries-container h3{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+footer{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(16, 137, 197);
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
