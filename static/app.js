@@ -15,7 +15,7 @@ async function loadCountries() {
     try {
         document.getElementById('country-select').innerHTML = '<option value="">Cargando países...</option>';
         
-        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,alpha,flags,capital,region,population,currencies,languages,ones,latlng');
+        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,alpha,flags,capital,region,population,currencies,languages,area,latlng');
         
         if (!response.ok) {
             throw new Error(`Error en la respuesta de la API: ${response.statusText}`);
@@ -74,7 +74,7 @@ async function showCountryInfo(countryCode) {
         document.getElementById('capital').textContent = country.capital?.[0] || 'No disponible';
         document.getElementById('region').textContent = country.region || 'No disponible';
         document.getElementById('population').textContent = country.population ? country.population.toLocaleString('es-ES') : 'No disponible';
-        document.getElementById('country-code').textContent = country.cca2 || 'No disponible';
+        document.getElementById('country-code').textContent = country.cca2 || country.cca3 || 'No disponible';
         document.getElementById('area').textContent = country.area ? `${country.area.toLocaleString('es-ES')} km²` : 'No disponible';
 
         // Idiomas
